@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import "./styles.css";
+import Contact from "./components/Contact.js";
 
-function App() {
+const names = [
+  {firstName:"Mark", lastName:"Zuckerberg"}, 
+  {firstName:"Tim", lastName:"Cool"}, 
+  {firstName:"Jeff", lastName:"Bezos"}, 
+  {firstName:"Elon", lastName:"Musk"}
+];
+
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {names.map((contact) => {
+        return <Contact contactName={contact} />;
+      })}
     </div>
   );
 }
-
-export default App;
